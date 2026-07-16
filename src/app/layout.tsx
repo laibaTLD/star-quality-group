@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   },
   description:
     "Professional painting, drywall, and basement refinishing services in Maryland and Washington DC. Quality craftsmanship you can trust.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   verification: {
     google: "522gDcUew5GtxGy0g2SPVFWaHq4T1CVqwujL-gC7yRQ",
   },
