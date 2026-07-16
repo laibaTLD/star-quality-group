@@ -1,0 +1,1272 @@
+@import "tailwindcss";
+
+/* Standard Typography System */
+.text-heading-1 {
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900;
+}
+
+.text-heading-2 {
+  @apply text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900;
+}
+
+.text-heading-3 {
+  @apply text-xl sm:text-2xl md:text-3xl font-medium text-gray-900;
+}
+
+.text-body-large {
+  @apply text-lg sm:text-xl text-gray-700 leading-relaxed;
+}
+
+.text-body {
+  @apply text-base sm:text-lg text-gray-700 leading-relaxed;
+}
+
+.text-body-small {
+  @apply text-sm sm:text-base text-gray-600;
+}
+
+.text-caption {
+  @apply text-xs sm:text-sm text-gray-500 uppercase tracking-wide;
+}
+
+/* Banner/Hero title styling - matches home page */
+.text-banner-title {
+  @apply text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold uppercase text-center drop-shadow-[0_0_15px_rgba(0,0,0,0.8)];
+}
+
+/* Standard font family for all text */
+* {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Salon theme colors - elegant and luxurious */
+  --color-primary: #d4a574; /* Muted gold */
+  --color-secondary: #e8b4b8; /* Blush pink */
+
+  /* Dynamic color variations - salon palette */
+  --color-primary-light: rgba(212, 165, 116, 0.1);
+  --color-primary-dark: rgba(212, 165, 116, 0.9);
+  --color-secondary-light: rgba(232, 180, 184, 0.1);
+  --color-secondary-dark: rgba(232, 180, 184, 0.9);
+  --color-accent: var(--color-primary);
+  --color-accent-light: rgba(212, 165, 116, 0.05);
+
+  /* Salon-specific colors */
+  --salon-cream: #f7f3f0;
+  --salon-beige: #f0e6d2;
+  --salon-blush: #f5e6e8;
+  --salon-lavender: #e8e0f0;
+  --salon-gold: #d4a574;
+  --salon-rose-gold: #e8b4b8;
+
+  /* Static neutral colors for UI elements */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text: var(--foreground);
+  --color-surface: var(--background);
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Site is light-themed; do not flip --foreground/--background with OS dark mode */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes for theme colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.bg-secondary-light {
+  background-color: var(--color-secondary-light);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+/* Modern gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, var(--salon-cream) 0%, var(--salon-blush) 30%, var(--salon-beige) 70%, var(--salon-lavender) 100%);
+}
+
+.bg-gradient-card {
+  background: linear-gradient(145deg, white 0%, var(--color-primary-light) 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+/* Typography styles - Salon aesthetic */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #2d2d2d; /* Soft dark gray instead of white */
+  margin-bottom: 1.5rem;
+  font-family: var(--font-playfair), 'Times New Roman', serif; /* Elegant serif */
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-subtitle {
+  color: #4a4a4a; /* Medium gray */
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif; /* Clean sans-serif */
+  font-weight: 500;
+}
+
+.hero-description {
+  color: #6b6b6b; /* Lighter gray */
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif; /* Clean sans-serif */
+  font-weight: 400;
+}
+
+.hero-cta-button {
+  background: linear-gradient(135deg, var(--salon-gold) 0%, var(--salon-rose-gold) 100%);
+  color: white;
+  border-radius: 50px; /* More rounded for salon vibe */
+  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.hero-cta-button:hover {
+  background: linear-gradient(135deg, var(--salon-rose-gold) 0%, var(--salon-gold) 100%);
+  box-shadow: 0 12px 35px rgba(212, 165, 116, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero-overlay {
+  background: rgba(247, 243, 240, 0.3); /* Light cream overlay */
+}
+
+.hero-decorative-light {
+  background: rgba(212, 165, 116, 0.15); /* Soft gold glow */
+}
+
+.hero-decorative-lighter {
+  background: rgba(232, 180, 184, 0.1); /* Soft blush glow */
+}
+
+/* Salon hero layout enhancements */
+.hero-text-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(212, 165, 116, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .hero-text-container {
+    background: rgba(255, 255, 255, 0.98);
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Salon Navbar Styles */
+.navbar-salon {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+  box-shadow: 0 4px 20px rgba(212, 165, 116, 0.1);
+  border-radius: 0 0 20px 20px;
+  margin: 0 1rem;
+  width: calc(100% - 2rem);
+}
+
+.navbar-logo-text {
+  color: #2d2d2d;
+  font-family: var(--font-playfair), 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar-link {
+  color: #6b6b6b;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navbar-link:hover {
+  color: var(--salon-gold);
+  transform: translateY(-1px);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--salon-gold), var(--salon-rose-gold));
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-cta-button {
+  background: linear-gradient(135deg, var(--salon-gold) 0%, var(--salon-rose-gold) 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar-cta-button:hover {
+  background: linear-gradient(135deg, var(--salon-rose-gold) 0%, var(--salon-gold) 100%);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.navbar-mobile-button {
+  color: #2d2d2d;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.navbar-mobile-button:hover {
+  color: var(--salon-gold);
+  background: rgba(212, 165, 116, 0.1);
+}
+
+.navbar-mobile-menu {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+.navbar-mobile-link {
+  color: #4a4a4a;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+  margin: 0.25rem 0;
+}
+
+.navbar-mobile-link:hover {
+  color: var(--salon-gold);
+  background: rgba(212, 165, 116, 0.1);
+  transform: translateX(8px);
+}
+
+.navbar-mobile-cta {
+  background: linear-gradient(135deg, var(--salon-gold) 0%, var(--salon-rose-gold) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.navbar-mobile-cta:hover {
+  background: linear-gradient(135deg, var(--salon-rose-gold) 0%, var(--salon-gold) 100%);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+  transform: translateY(-2px);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-salon {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.hero-wave {
+  color: var(--color-white);
+}
+
+/* Footer styles */
+.footer-bg {
+  background: var(--color-gray-900);
+  color: var(--color-white);
+}
+
+.footer-text {
+  color: var(--color-gray-300);
+}
+
+.footer-text:hover {
+  color: var(--color-white);
+}
+
+.footer-heading {
+  color: var(--color-white);
+}
+
+/* Business overview decorative elements */
+.business-decorative-light {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.business-decorative-medium {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.business-decorative-heavy {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.business-decorative-full {
+  background: rgba(255, 255, 255, 1);
+}
+
+.business-decorative-semi {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.business-decorative-light-dot {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.business-text-white {
+  color: var(--color-white);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Button styles with modern effects */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Modern card styles */
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.card-bento {
+  background: white;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-gray-200);
+}
+
+.card-bento:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+  border-color: var(--color-primary-light);
+}
+
+/* Section spacing */
+.section-padding {
+  padding: var(--spacing-3xl) 0;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+
+.gradient-light {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+}
+
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '...';
+}
+
+/* Luxury Hero Section Styles */
+.luxury-hero-title {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .luxury-hero-title {
+    font-size: 3rem;
+  }
+}
+
+.luxury-title-shimmer {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a 0%,
+    var(--theme-primary-color, var(--salon-gold)) 25%,
+    #1a1a1a 50%,
+    var(--theme-secondary-color, var(--salon-rose-gold)) 75%,
+    #1a1a1a 100%
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--salon-gold);
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.luxury-hero-description {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  max-width: 90%;
+}
+
+.luxury-cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background: linear-gradient(135deg, var(--salon-gold) 0%, var(--salon-rose-gold) 100%);
+  color: white;
+  border-radius: 60px;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(212, 165, 116, 0.4);
+  color: white;
+}
+
+.luxury-button-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.luxury-cta-button:hover .luxury-button-shimmer {
+  left: 100%;
+}
+
+
+/* Luxury gradient backgrounds */
+.bg-luxury-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--salon-cream) 0%,
+    var(--salon-beige) 25%,
+    var(--salon-blush) 50%,
+    var(--salon-lavender) 75%,
+    var(--salon-cream) 100%
+  );
+  background-size: 400% 400%;
+}
+
+/* Curtain reveal animation */
+.curtain-reveal {
+  transform: translateX(0);
+  transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.curtain-reveal.revealed {
+  transform: translateX(-100%);
+}
+
+/* Luxury decorative elements */
+.luxury-accent {
+  position: relative;
+}
+
+.luxury-accent::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--salon-gold), var(--salon-rose-gold), var(--salon-lavender));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.luxury-accent:hover::before {
+  opacity: 0.3;
+}
+
+/* Enhanced animations for luxury feel */
+
+/* Sophisticated hover effects */
+.luxury-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-hover:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Luxury Navbar Styles */
+.minimal-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--theme-primary-color, #d4a574);
+}
+
+.minimal-navbar-scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 8px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.minimal-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.minimal-logo-container {
+  flex-shrink: 0;
+}
+
+.minimal-logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.minimal-logo-image {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.minimal-logo-text {
+  color: white;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.minimal-mobile-button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.minimal-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.minimal-hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.minimal-hamburger-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.minimal-hamburger-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.minimal-hamburger-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.luxury-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+/* Luxury Navigation Buttons */
+.luxury-nav-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.luxury-nav-button:hover {
+  transform: translateY(-1px);
+}
+
+.minimal-nav-link {
+  position: relative;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.minimal-nav-underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  transition: width 0.3s ease;
+}
+.minimal-nav-link:hover .minimal-nav-underline {
+  width: 100%;
+}
+
+/* Minimal CTA Button */
+.minimal-cta-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background: var(--theme-primary-color, #d4a574);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.minimal-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Minimal Navigation Links */
+.minimal-nav-link {
+  position: relative;
+  color: #333;
+  font-family: var(--font-montserrat), 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.minimal-nav-link:hover {
+  color: var(--theme-primary-color, #d4a574);
+}
+
+.minimal-nav-underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--theme-primary-color, #d4a574);
+  transition: width 0.3s ease;
+}
+
+.minimal-nav-link:hover .minimal-nav-underline {
+  width: 100%;
+}
+
+/* Luxury Logo */
+.luxury-logo-container {
+  flex-shrink: 0;
+}
+
+.luxury-logo-link {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.luxury-logo-link:hover {
+  transform: scale(1.05);
+}
+
+.luxury-logo-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(212, 165, 116, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.luxury-logo-link:hover .luxury-logo-frame {
+  border-color: var(--salon-gold);
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+}
+
+.luxury-logo-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.luxury-logo-text {
+  color: white;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  margin-left: 0.5rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.luxury-logo-text-only {
+  color: white;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+/* Luxury Mobile Button */
+.luxury-mobile-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  clip-path: none;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+}
+
+.luxury-mobile-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 10px var(--theme-primary-color-glow, rgba(212, 165, 116, 0.2));
+  border-radius: 40%;
+}
+
+.luxury-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 16px;
+  transition: all 0.3s ease;
+}
+
+.luxury-hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.luxury-hamburger-open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.luxury-hamburger-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.luxury-hamburger-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Luxury Full-Screen Mobile Menu */
+.luxury-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--salon-cream) 0%,
+    var(--salon-beige) 25%,
+    var(--salon-blush) 50%,
+    var(--salon-lavender) 75%,
+    var(--salon-cream) 100%
+  );
+  background-size: 400% 400%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.luxury-mobile-menu-content {
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.luxury-mobile-logo {
+  margin-bottom: 3rem;
+}
+
+.luxury-mobile-logo-frame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(212, 165, 116, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(212, 165, 116, 0.2);
+}
+
+.luxury-mobile-logo-image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.luxury-mobile-logo-text {
+  color: #2d2d2d;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+
+.luxury-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.luxury-mobile-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.luxury-mobile-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--theme-primary-color, var(--salon-gold));
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 30px var(--theme-primary-color-shadow, rgba(212, 165, 116, 0.3)),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+}
+
+.luxury-mobile-link-text {
+  position: relative;
+  z-index: 10;
+  color: #2d2d2d;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.luxury-mobile-link:hover .luxury-mobile-link-text {
+  color: var(--salon-gold);
+}
+
+.luxury-mobile-link-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 165, 116, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.luxury-mobile-link:hover .luxury-mobile-link-shimmer {
+  left: 100%;
+}
+
+
+.luxury-mobile-cta-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, var(--theme-primary-color, var(--salon-gold)) 0%, var(--theme-secondary-color, var(--salon-rose-gold)) 100%);
+  border: 1px solid var(--theme-primary-color-border, rgba(212, 165, 116, 0.4));
+  border-radius: 24px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  box-shadow: 
+    0 8px 25px var(--theme-primary-color-shadow, rgba(212, 165, 116, 0.3)),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.luxury-mobile-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 40px var(--theme-primary-color-shadow-hover, rgba(212, 165, 116, 0.4)),
+    0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--theme-secondary-color, var(--salon-rose-gold)) 0%, var(--theme-primary-color, var(--salon-gold)) 100%);
+  border-radius: 28px;
+}
+
+.luxury-mobile-cta-text {
+  position: relative;
+  z-index: 10;
+  color: white;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.luxury-mobile-cta-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.luxury-mobile-cta-button:hover .luxury-mobile-cta-shimmer {
+  left: 100%;
+}
+
+/* Luxury Mobile Decorations */
+.luxury-mobile-decorations {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.luxury-mobile-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(212, 165, 116, 0.1);
+}
+
+.luxury-mobile-decoration-1 {
+  width: 100px;
+  height: 100px;
+  left: 10%;
+}
+
+.luxury-mobile-decoration-2 {
+  height: 60px;
+  top: 20%;
+  right: 15%;
+}
+
+.luxury-mobile-decoration-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 25%;
+  left: 20%;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .luxury-navbar-container {
+    gap: 1rem;
+  }
+  
+  .luxury-nav-button {
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .luxury-cta-nav-button {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-navbar {
+    top: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .luxury-logo-text {
+    font-size: 1.2rem;
+  }
+  
+  .luxury-mobile-content {
+    padding: 1.5rem;
+  }
+  
+  .luxury-mobile-logo-text {
+    font-size: 1.5rem;
+  }
+}
