@@ -145,7 +145,7 @@ export default function ServiceAreaHeroSection({
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white">
+      <section className="relative overflow-hidden min-h-[100svh] md:min-h-screen flex items-center justify-center bg-white">
 
         {/* Background Grid */}
         <div className="absolute inset-0 z-0">
@@ -153,7 +153,7 @@ export default function ServiceAreaHeroSection({
             {gridImages.map((imageObj, index) => (
               <div
                 key={index}
-                className="hero-panel relative overflow-hidden flex-[0_0_25%] h-screen bg-gray-800 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                className="hero-panel relative overflow-hidden flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] h-[100svh] md:h-screen bg-gray-800 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 role="img"
                 aria-label={imageObj.altText}
                 onMouseEnter={() => handlePointerEnter(index)}
@@ -187,13 +187,13 @@ export default function ServiceAreaHeroSection({
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-20 min-h-screen flex items-center justify-center text-center w-full pointer-events-none px-4 sm:px-6">
+        <div className="relative z-20 min-h-[100svh] md:min-h-screen flex items-center justify-center text-center w-full pointer-events-none px-4 sm:px-6">
           <div className="w-full max-w-4xl">
             
             {/* Main Title */}
             <div className="overflow-hidden">
                <h1 
-                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase relative drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]"
+                 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase relative drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight"
                  style={{ color: 'var(--color-white)' }}
                >
                 {resolvedTitle}
@@ -203,7 +203,7 @@ export default function ServiceAreaHeroSection({
             {/* Subtitle */}
             {resolvedSubtitle && (
               <div>
-                 <h2 className="text-[1rem] font-extralight uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]" style={{ color: 'var(--color-white)' }}>
+                 <h2 className="mt-2 text-sm sm:text-base font-extralight uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)] px-2" style={{ color: 'var(--color-white)' }}>
                   {resolvedSubtitle}
                 </h2>
               </div>
@@ -211,18 +211,18 @@ export default function ServiceAreaHeroSection({
 
             {/* Description */}
             {resolvedDescription && (
-              <div className="mt-4 max-w-2xl mx-auto">
-                <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-[0_0_8px_rgba(0,0,0,0.6)]">
+              <div className="mt-3 sm:mt-4 max-w-2xl mx-auto">
+                <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed drop-shadow-[0_0_8px_rgba(0,0,0,0.6)] line-clamp-4 sm:line-clamp-none">
                   {resolvedDescription}
                 </p>
               </div>
             )}
 
             {/* CTA Button */}
-            <div className="pt-8 relative z-30">
+            <div className="pt-6 sm:pt-8 relative z-30">
               <a 
                 href="tel:2023814545" 
-                className="group pointer-events-auto inline-flex items-center gap-4 px-8 py-4 text-sm no-underline uppercase rounded-lg text-center font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm bg-black/20 border-2"
+                className="group pointer-events-auto inline-flex items-center gap-2 sm:gap-4 px-5 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm no-underline uppercase rounded-lg text-center font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm bg-black/20 border-2"
                 style={{
                   borderColor: 'var(--color-white)',
                   color: 'var(--color-white)',

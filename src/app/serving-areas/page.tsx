@@ -4,6 +4,7 @@ import ServiceAreasSection from "@/sections/ServiceAreasSection";
 import FAQSection from "@/sections/FAQSection";
 import ServiceAreaHeroSection from "@/sections/ServiceAreaHeroSection";
 import ServiceAreaIntroSection from "@/sections/ServiceAreaIntroSection";
+import FooterSection from "@/sections/FooterSection";
 import { fetchLandingPageForSSG } from "@/lib/database";
 import { LandingPageData } from "@/types/template";
 import { notFound } from "next/navigation";
@@ -59,14 +60,31 @@ export default async function ServingAreasPage() {
       seoData={seoDataWithIndex}
       landingPageData={landingPageData}
     >
-      <div className="animate-fade-in-up">
-        <Navbar />
+      <Navbar
+        businessName={landingPageData.businessName}
+        logoImage="/logo.png"
+        themeData={landingPageData.themeData}
+        phoneNumber={landingPageData.businessData?.phone}
+      />
+      <div
+        style={{
+          ["--color-primary" as string]: landingPageData.themeData?.primaryColor,
+          ["--color-secondary" as string]:
+            landingPageData.themeData?.secondaryColor,
+          ["--color-accent" as string]:
+            landingPageData.themeData?.accentColor ??
+            landingPageData.themeData?.primaryColor,
+          ["--background" as string]: "#ffffff",
+          ["--foreground" as string]: "#171717",
+          ["--color-surface" as string]: "#ffffff",
+          ["--color-text" as string]: "#171717",
+        }}
+      >
         <main className="bg-white">
           <ServiceAreaHeroSection
             serviceName="Junk Removal"
             areaLabel="Service Areas"
-            heading={
-                `Junk Removal Service Areas`            }
+            heading={`Junk Removal Service Areas`}
             subheading="Fast, reliable, and eco-friendly junk removal services in your neighborhood."
             description="We make junk removal easy with our professional team, transparent pricing, and commitment to environmentally responsible disposal. Whether it's residential cleanouts, construction debris, or commercial waste, we handle it all with care and efficiency."
             images={landingPageData.images || []}
@@ -84,22 +102,55 @@ export default async function ServingAreasPage() {
               "No hidden fees - upfront pricing before we start",
               "Fully licensed, insured, and background-checked team",
               "Eco-friendly disposal with 60%+ recycling rate",
-              "Residential, commercial, and construction cleanouts"
+              "Residential, commercial, and construction cleanouts",
             ]}
             theme={landingPageData.themeData}
           />
 
           {serviceAreas.length > 0 && (
-            <ServiceAreasSection />
+            <ServiceAreasSection
+              serviceAreas={serviceAreas}
+              themeData={landingPageData.themeData}
+            />
           )}
+
           {landingPageData.content.faq && (
-            <FAQSection 
-              title={landingPageData.content.faq.title || "Frequently Asked Questions"}
-              description={landingPageData.content.faq.description || "Get answers to common questions about our services"}
+            <FAQSection
+              title={
+                landingPageData.content.faq.title ||
+                "Frequently Asked Questions"
+              }
+              description={
+                landingPageData.content.faq.description ||
+                "Get answers to common questions about our services"
+              }
               questions={landingPageData.content.faq.questions || []}
               themeData={landingPageData.themeData}
             />
           )}
+
+          <FooterSection
+            footerTitle={landingPageData.seoData.title}
+            socialsList={(landingPageData.businessData.socialLinks || []).map(
+              (s) => ({ name: s.platform, url: s.url })
+            )}
+            originCity={landingPageData.businessData.address?.city || ""}
+            workingScope={
+              serviceAreas.length
+                ? `serving ${Array.from(
+                    new Set(serviceAreas.map((a) => a.region))
+                  )
+                    .filter((r) => r && r !== "DC")
+                    .join(", ")}`
+                : ""
+            }
+            contactEmail={landingPageData.businessData.email}
+            agencyName={landingPageData.businessName}
+            currentYear={new Date().getFullYear()}
+            themeData={landingPageData.themeData}
+            businessName={landingPageData.businessName}
+            businessData={landingPageData.businessData}
+          />
         </main>
       </div>
     </Layout>

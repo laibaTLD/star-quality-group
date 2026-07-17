@@ -37,7 +37,7 @@ const ServiceAreaIntroSection: React.FC<ServiceAreaIntroSectionProps> = ({
   return (
     <section
       id="service-area-intro"
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-28 overflow-hidden"
       style={{ backgroundColor: '#ffffff' }}
     >
       {/* Background gradient overlay using primary and secondary theme colors */}
@@ -59,7 +59,7 @@ const ServiceAreaIntroSection: React.FC<ServiceAreaIntroSectionProps> = ({
         <div className="max-w-3xl mx-auto text-center">
           <h2
             ref={titleRef}
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mb-10 transition-all duration-700 ${
+            className={`text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight mb-6 sm:mb-10 transition-all duration-700 ${
               titleVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"

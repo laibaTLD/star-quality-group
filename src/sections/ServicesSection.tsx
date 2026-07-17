@@ -162,7 +162,7 @@ export default function ServicesSection({
           {/* Left Arrow */}
           <button
             onClick={scrollPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="hidden sm:flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full items-center justify-center transition-all duration-300 hover:scale-110 backdrop-blur-sm"
             style={{
               backgroundColor: 'rgba(255,255,255,0.9)',
               color: secondaryColor,
@@ -178,7 +178,7 @@ export default function ServicesSection({
             }}
             aria-label="Previous slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -186,7 +186,7 @@ export default function ServicesSection({
           {/* Right Arrow */}
           <button
             onClick={scrollNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="hidden sm:flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full items-center justify-center transition-all duration-300 hover:scale-110 backdrop-blur-sm"
             style={{
               backgroundColor: 'rgba(255,255,255,0.9)',
               color: secondaryColor,
@@ -202,7 +202,7 @@ export default function ServicesSection({
             }}
             aria-label="Next slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -221,7 +221,7 @@ export default function ServicesSection({
                     aria-labelledby={`service-title-${index}`}
                   >
                     <article>
-                      <div className="relative w-full aspect-[3/4] overflow-hidden">
+                      <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
                         {img?.imageUrl ? (
                           <Image
                             src={img.imageUrl}

@@ -88,12 +88,12 @@ export default function FAQSection({
                       color: textColor
                     }}
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="font-extrabold leading-[1.05] tracking-[-0.01em] text-base md:text-lg">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="min-w-0 flex-1 pr-2 font-extrabold leading-[1.15] tracking-[-0.01em] text-sm sm:text-base md:text-lg">
                         {index + 1}. {faq.question.toUpperCase()}
                       </span>
                       <span 
-                        className="text-xl"
+                        className="text-xl shrink-0"
                         style={{
                           transform: index === openIndex ? 'rotate(45deg)' : 'rotate(0deg)',
                           color: primaryColor
@@ -106,14 +106,14 @@ export default function FAQSection({
                   
                   {/* Answer - Directly beneath the question */}
                   <div 
-                    className="overflow-hidden"
+                    className="overflow-hidden transition-[max-height,opacity] duration-300"
                     style={{
-                      maxHeight: index === openIndex ? '500px' : '0px',
+                      maxHeight: index === openIndex ? '70vh' : '0px',
                       opacity: index === openIndex ? 1 : 0
                     }}
                   >
-                    <div className="px-4 pb-4 pt-2 border-t" style={{ borderColor: `${primaryColor}20` }}>
-                      <p className="font-extrabold leading-[1.05] tracking-[-0.01em] text-sm md:text-base" style={{ color: mutedTextColor }}>
+                    <div className={`px-4 pb-4 pt-2 border-t ${index === openIndex ? 'overflow-y-auto max-h-[60vh]' : ''}`} style={{ borderColor: `${primaryColor}20` }}>
+                      <p className="font-medium leading-relaxed tracking-normal text-sm md:text-base" style={{ color: mutedTextColor }}>
                         {faq.answer}
                       </p>
                     </div>

@@ -107,7 +107,7 @@ export default function AboutSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-stretch lg:min-h-[560px]">
           {/* Image — dominant visual */}
           <div
-            className={`relative lg:col-span-7 min-h-[320px] sm:min-h-[420px] lg:min-h-full overflow-hidden group transition-all duration-700 delay-100 ${
+            className={`relative lg:col-span-7 min-h-[240px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-full overflow-hidden group transition-all duration-700 delay-100 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >

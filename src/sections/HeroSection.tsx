@@ -140,7 +140,7 @@ export default function HeroSection({
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-white">
+    <section className="relative overflow-hidden min-h-[100svh] md:min-h-screen flex items-center justify-center bg-white">
 
         {/* Background Grid */}
         <div className="absolute inset-0 z-0">
@@ -148,7 +148,7 @@ export default function HeroSection({
             {gridImages.map((imageObj, index) => (
               <div
                 key={index}
-                className="hero-panel relative overflow-hidden flex-[0_0_25%] h-screen bg-gray-800 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                className="hero-panel relative overflow-hidden flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] h-[100svh] md:h-screen bg-gray-800 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 role="img"
                 aria-label={imageObj.altText}
                 onMouseEnter={() => handlePointerEnter(index)}
@@ -182,7 +182,7 @@ export default function HeroSection({
         </div>
 
         {/* Content Overlay */}
-        <div className="relative z-20 min-h-screen flex items-center justify-center text-center w-full pointer-events-none px-4 sm:px-6">
+        <div className="relative z-20 min-h-[100svh] md:min-h-screen flex items-center justify-center text-center w-full pointer-events-none px-4 sm:px-6">
           <div className="w-full max-w-4xl">
             
           
@@ -190,7 +190,7 @@ export default function HeroSection({
             {/* Main Title */}
             <div className="overflow-hidden">
                <h1 
-                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase relative drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]"
+                 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase relative drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight"
                  style={{ color: 'var(--color-white)' }}
                >
                 {title}
@@ -200,17 +200,17 @@ export default function HeroSection({
 
            {/* Subtitle */}
             <div>
-               <h2 className="text-[1rem] font-extralight uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]" style={{ color: 'var(--color-white)' }}>
+               <h2 className="mt-2 text-sm sm:text-base font-extralight uppercase drop-shadow-[0_0_10px_rgba(0,0,0,0.8)] px-2" style={{ color: 'var(--color-white)' }}>
                 {subtitle}
               </h2>
             </div>
 
             {/* CTA Button */}
             {ctaButton && ctaButton.href && ctaButton.label && (
-              <div className="pt-8 relative z-30">
+              <div className="pt-6 sm:pt-8 relative z-30">
                 <a 
                   href={ctaButton.href} 
-                  className="group pointer-events-auto inline-flex items-center gap-4 px-8 py-4 text-sm no-underline uppercase rounded-lg text-center font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm bg-black/20 border-2"
+                  className="group pointer-events-auto inline-flex items-center gap-2 sm:gap-4 px-5 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm no-underline uppercase rounded-lg text-center font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm bg-black/20 border-2"
                   style={{
                     borderColor: 'var(--color-white)',
                     color: 'var(--color-white)',

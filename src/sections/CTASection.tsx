@@ -28,7 +28,7 @@ export default function CTASection({ data, theme, images }: CTASectionProps) {
     <section className="relative overflow-hidden bg-white py-10 md:py-14">
       <div className="mx-auto w-full max-w-[92vw] md:max-w-[88vw]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border border-black/8 overflow-hidden">
-          <div className="lg:col-span-7 px-6 py-10 sm:px-10 md:py-14">
+          <div className="lg:col-span-7 px-4 py-8 sm:px-8 sm:py-10 md:px-10 md:py-14">
             {data.subHeading && (
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8" style={{ backgroundColor: primaryColor }} />

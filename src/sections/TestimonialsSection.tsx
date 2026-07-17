@@ -109,7 +109,7 @@ export default function TestimonialsSection({
             </span>
             <p
               key={activeIndex}
-              className="quote-text mt-2 max-w-4xl text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light uppercase leading-snug tracking-wide"
+              className="quote-text mt-2 max-w-4xl text-lg sm:text-xl md:text-2xl lg:text-3xl font-light normal-case sm:uppercase leading-snug tracking-wide"
               style={{ color: "var(--foreground)" }}
             >
               {active.text}

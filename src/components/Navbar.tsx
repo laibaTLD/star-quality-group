@@ -194,7 +194,7 @@ export default function Navbar({
                 <div className="absolute -top-4 left-0 right-0 h-4 z-40"></div>
                 
                 <div 
-                  className="dropdown-glass rounded-xl overflow-hidden shadow-2xl flex min-w-[500px]"
+                  className="dropdown-glass rounded-xl overflow-hidden shadow-2xl flex min-w-0 w-[min(500px,calc(100vw-2rem))]"
                   style={{ 
                     border: `1px solid ${primaryColor}40`,
                     boxShadow: `0 0 40px ${primaryColor}30`
@@ -250,6 +250,13 @@ export default function Navbar({
                 </div>
               </div>
             </div>
+            <Link
+              href="/reviews"
+              className="nav-link-style text-white/80 hover:text-white transition-colors py-4"
+              style={{ textShadow: '0 0 8px rgba(0,0,0,0.6)' }}
+            >
+              Reviews
+            </Link>
             <Link
               href="/contact-us"
               className="nav-link-style text-white/80 hover:text-white transition-colors"
@@ -326,7 +333,7 @@ export default function Navbar({
 
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-[99] flex items-center justify-center"
+          className="lg:hidden fixed inset-0 z-[99] overflow-y-auto overscroll-contain"
           style={{ backgroundColor: secondaryColor }}
         >
           <div 
@@ -336,7 +343,7 @@ export default function Navbar({
             }}
           />
           
-          <div className="flex flex-col items-center space-y-10 text-2xl font-bold uppercase text-white relative z-10">
+          <div className="relative z-10 min-h-full flex flex-col items-center justify-center gap-6 sm:gap-10 py-24 px-6 text-xl sm:text-2xl font-bold uppercase text-white">
             <Link onClick={() => setIsOpen(false)} href="/" className="hover:text-white/80 transition-all py-2">Home</Link>
             <Link onClick={() => setIsOpen(false)} href="/about-us" className="hover:text-white/80 transition-all py-2">About</Link>
             <Link onClick={() => setIsOpen(false)} href="/services" className="hover:text-white/80 transition-all py-2">Services</Link>
@@ -345,7 +352,7 @@ export default function Navbar({
             <Link onClick={() => setIsOpen(false)} href="/contact-us" className="hover:text-white/80 transition-all py-2">Contact</Link>
             <Link
               href={phoneNumber ? `tel:${phoneNumber}` : "tel:2023814545"}
-              className="mt-6 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-semibold flex items-center gap-3 transition-all"
+              className="mt-4 sm:mt-6 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm uppercase tracking-widest font-semibold flex items-center gap-3 transition-all"
               style={{ 
                 backgroundColor: primaryColor,
                 color: 'var(--color-white)',
