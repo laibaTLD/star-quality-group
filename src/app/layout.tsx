@@ -1,27 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { getLandingPageData } from "@/lib/data";
 import { LandingPageDataProvider } from "@/components/LandingPageDataProvider";
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.starqualitygroup.com"),
@@ -48,10 +29,19 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${playfairDisplay.variable} ${inter.variable} ${montserrat.variable} antialiased`}
-        suppressHydrationWarning
-      >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
         <LandingPageDataProvider value={landingPageData}>
           {children}
         </LandingPageDataProvider>

@@ -10,8 +10,7 @@ import CTASection from "@/sections/CTASection";
 import ServiceOverlayCardSection from "@/sections/ServiceOverlayCardSection";
 import FAQSection from "@/sections/FAQSection";
 import FooterSection from "@/sections/FooterSection";
-import { fetchLandingPageForSSG } from "@/lib/database";
-import { LandingPageData } from "@/types/template";
+import { getRequiredLandingPageData } from "@/lib/getRequiredLandingPageData";
 import { Metadata } from "next";
 
 // Page metadata
@@ -237,29 +236,8 @@ const SERVICE_DETAIL_SECTION = {
 };
 
 
-async function getLandingPageData(): Promise<LandingPageData> {
-  const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-  const id = process.env.NEXT_PUBLIC_ID;
-
-  if (!templateId || !id) {
-    throw new Error(
-      "Missing required environment variables: NEXT_PUBLIC_TEMPLATE_ID, NEXT_PUBLIC_ID"
-    );
-  }
-
-  const landingPageData = await fetchLandingPageForSSG(templateId, id);
-
-  if (!landingPageData) {
-    throw new Error(
-      `Landing page not found: templateId=${templateId}, id=${id}`
-    );
-  }
-
-  return landingPageData;
-}
-
 export default async function JunkRemovalPhoenixPage() {
-  const landingPageData = await getLandingPageData();  const servicesImages = landingPageData.images?.filter((img) => img.slotName.includes("services")) || [];
+  const landingPageData = await getRequiredLandingPageData();  const servicesImages = landingPageData.images?.filter((img) => img.slotName.includes("services")) || [];
 
   return (
     <Layout
